@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pethub
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: pethub
+  template:
+    metadata:
+      labels:
+        app: pethub
+    spec:
+      containers:
+      - name: pethub
+        image: us.icr.io/mohankum/myrepo
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
