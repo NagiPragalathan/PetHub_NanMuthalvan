@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pet List</title>
+</head>
+<body>
+    <h1>Pet List</h1>
+    <ul>
+        {% for pet in pets %}
+        <li>{{ pet.NAME }} - {{ pet.SPECIES }} - ${{ pet.PRICE }} <a href="{% url 'buy_pet' pet_id=pet.ID %}">Buy</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'sell_pet' %}">Sell a Pet</a>
+</body>
+</html>

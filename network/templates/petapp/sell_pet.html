@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sell a Pet</title>
+</head>
+<body>
+    <h1>Sell a Pet</h1>
+    <form method="post" action="{% url 'sell_pet' %}">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="species">Species:</label>
+        <input type="text" id="species" name="species"><br>
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price"><br>
+        <label for="image">Image:</label>
+        <input type="text" id="url" name="url"><br>
+        <input type="submit" value="Sell Pet">
+    </form>
+</body>
+</html>
